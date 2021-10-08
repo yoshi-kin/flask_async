@@ -39,3 +39,8 @@ def sync():
     for url in urls:
         html += f"<img src='{url}'><br><br>"
     return html
+
+
+@app.get('/demo')
+def demo():
+    return 'demo'
