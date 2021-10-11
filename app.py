@@ -46,6 +46,5 @@ def dmeo():
     return 'demo'
 
 
-@app.get('pull_request')
-def pull_request():
-    return 'pull_request'
+if __name__ == '__main__':
+    app.run()
