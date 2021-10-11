@@ -10,7 +10,7 @@ class TestCICD:
         try:
             # Chromeを操作
             options = Options()
-            # options.add_argument('--headless')
+            options.add_argument('--headless')
             driver = webdriver.Chrome(options=options)
             url = "http://127.0.0.1:5000/demo"
             driver.get(url)
