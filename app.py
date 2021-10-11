@@ -44,3 +44,7 @@ def sync():
 @app.get('/demo')
 def dmeo():
     return 'demo'
+
+
+if __name__ == '__main__':
+    app.run()
