@@ -44,3 +44,8 @@ def sync():
 @app.get('/demo')
 def dmeo():
     return 'demo'
+
+
+@app.get('pull_request')
+def pull_request():
+    return 'pull_request'
