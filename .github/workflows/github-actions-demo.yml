@@ -44,8 +44,10 @@ jobs:
 
       - name: Start flask
         run: python app.py
+        shell: bash
 
       - name: Start test
         run: pytest test.py
+        shell: bash
       
       - run: echo "🍏 This job's status is ${{ job.status }}."
