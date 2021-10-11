@@ -14,10 +14,10 @@ jobs:
       # - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
       # - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
       
-      - name: Check out repository code
+      - name: Checkout Repository
         uses: actions/checkout@v2
       
-      - name: Set up python
+      - name: Setup Python
         uses: actions/setup-python@v2
       
       - name: Install Chrome
@@ -42,12 +42,11 @@ jobs:
       #   run: |
       #     ls ${{ github.workspace }}
 
-      - name: Start flask
+      - name: Start App
         run: python app.py &
-        shell: bash
 
-      - name: Start test
+      - name: Start Test
         run: pytest test.py
-        shell: bash
       
-      - run: echo "🍏 This job's status is ${{ job.status }}."
+      - name: Job Status
+        run: echo "This job's status is ${{ job.status }}."
