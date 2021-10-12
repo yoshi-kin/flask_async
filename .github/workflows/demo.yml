@@ -14,19 +14,20 @@ jobs:
       # - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
       # - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
       
-      - name: Checkout Repository
+      - 
+        name: Checkout Repository
         uses: actions/checkout@v2
-      
-      - name: Setup Python
+      - 
+        name: Setup Python
         uses: actions/setup-python@v2
-      
-      - name: Install Chrome
+      - 
+        name: Install Chrome
         run: |
           sudo wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
           sudo apt update
           sudo apt-get install google-chrome-stable
-
-      - name: Install Library
+      - 
+        name: Install Library
         run: |
           pip install chromedriver-binary==93.*
           pip install selenium
@@ -41,12 +42,12 @@ jobs:
       # - name: List files in the repository
       #   run: |
       #     ls ${{ github.workspace }}
-
-      - name: Start App
+      - 
+        name: Start App
         run: python app.py &
-
-      - name: Start Test
+      - 
+        name: Start Test
         run: pytest test.py
-      
-      - name: Job Status
+      - 
+        name: Job Status
         run: echo "This job's status is ${{ job.status }}."
