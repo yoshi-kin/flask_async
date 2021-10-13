@@ -34,7 +34,6 @@ def sync():
         random = randint(0, 300)
         response = httpx.get(f'http://xkcd.com/{random}/info.0.json')
         urls.append(response.json()['img'])
-    
     html = ""
     for url in urls:
         html += f"<img src='{url}'><br><br>"
