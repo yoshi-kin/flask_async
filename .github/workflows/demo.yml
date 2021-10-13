@@ -7,7 +7,28 @@ on:
     branches:
       - master
 jobs:
+  flake8:
+    runs-on: ubuntu-latest
+    steps:
+      - 
+        name: Checkout Repository
+        uses: actions/checkout@v2
+      - 
+        name: Setup Python
+        uses: actions/setup-python@v2
+      - 
+        name: Install Library
+        run: |
+          pip install flask
+          pip install flask[async]
+          pip install httpx
+          pip install flake8
+      - 
+        name: Check Flake8
+        run: flask8 app.py
+        
   pytest:
+    needs: flake8
     runs-on: ubuntu-latest
     steps:
       # - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
