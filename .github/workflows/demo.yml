@@ -16,6 +16,9 @@ jobs:
       - 
         name: Setup Python
         uses: actions/setup-python@v2
+      -
+        name: Find
+        run: find . -name "*.py"
       - 
         name: Install Package
         run: |
