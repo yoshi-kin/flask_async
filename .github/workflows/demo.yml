@@ -16,9 +16,6 @@ jobs:
       - 
         name: Setup Python
         uses: actions/setup-python@v2
-      -
-        name: Find
-        run: find . -name "*.py"
       - 
         name: Install Package
         run: |
@@ -26,9 +23,9 @@ jobs:
           pip install flask[async]
           pip install httpx
           pip install flake8
-      - 
+      -
         name: Check Flake8
-        run: flake8 app.py
+        run: find . -name "*.py" -exec flake8 {} \;
         
   pytest:
     needs: flake8
